@@ -32,9 +32,10 @@
   left: 0;
   width: 100%;    
   background-color: var(--azul-1);
+  justify-content: center;
   display: flex;
   align-items: center;
-  height: 70px;
+  height: 90px;
   z-index: 100;
   padding: 10px 100px;
 }
@@ -57,7 +58,9 @@
   justify-content: flex-end;
   padding-right: 10px 5%;
   box-sizing: border-box;
-  margin:0px 180px;
+  margin:0px 0px;
+  align-items: center;
+  padding-top: 15px;
 }
 
 .pages ul {
@@ -89,10 +92,14 @@
   text-decoration: none;
 }
 
-.page h2{
+.text{
   color: var(--blanco);
   font-size: 16px;
   margin: 0;
+  font-weight: 700;
+}
+body{
+  background-color: var(--gris-nuevo);
 }
 /*
 #pages a {
@@ -111,10 +118,6 @@
     color: var(--blanco);
     font-size: 16px;
     margin: 0;
-}
-body{
-    padding-top: 6.2%;
-    background-color: var(--gris-nuevo);
 }
 #body-container{
     margin: 0 200px;
