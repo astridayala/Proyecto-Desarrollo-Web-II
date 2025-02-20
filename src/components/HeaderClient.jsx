@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { BrowserRouter as Router, Routes, Route, NavLink, useNavigate } from "react-router-dom"
-import { faUtensils, faSprayCanSparkles, faPlaneDeparture, faNotesMedical, faGift, faRightFromBracket, faTicket } from "@fortawesome/free-solid-svg-icons";
+import { faUtensils, faSprayCanSparkles, faPlaneDeparture, faNotesMedical, faGift, faRightFromBracket, faTicket, faUser } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/CM-Logo.png";
 
 function Nav({link, icon, text}) {
@@ -28,6 +28,7 @@ function HeaderCliente(){
                     <Nav link="/salud" icon={faNotesMedical} text="Salud"/>
                     <Nav link="/things" icon={faGift} text="Things"/>
                     <Nav link="/cupones" icon={faTicket} text="Mis Cupones"/>
+                    <Nav link="/perfil" icon={faUser} text="Mi Perfil"/>
                     <Nav link="/login" icon={faRightFromBracket} text="Cerrar sesión"/>
                 </ul>
             </nav>
