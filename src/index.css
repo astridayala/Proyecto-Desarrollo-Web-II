@@ -101,6 +101,19 @@
 body{
   background-color: var(--gris-nuevo);
 }
+footer {
+  background-color: var(--azul-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  position: fixed;
+}
+footer h3{
+  color: var(--blanco);
+  font-size: 0.9em;
+}
 /*
 #pages a {
     display: flex;
@@ -137,17 +150,4 @@ body{
     font-family: Montserrat Subrayada;
     color: var(--azul-3);
     font-size: 1.6em;
-}
-footer {
-    background-color: var(--azul-1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 10px 0;
-    position: relative;
-}
-footer h3{
-    color: var(--blanco);
-    font-size: 0.9em;
 }*/

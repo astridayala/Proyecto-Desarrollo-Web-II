@@ -14,7 +14,7 @@ function Nav({link, icon, text}) {
     )
 }
 
-function HeaderCliente(){
+export function HeaderCliente(){
     const navigate = useNavigate()
 
     return(
@@ -35,5 +35,3 @@ function HeaderCliente(){
         </header>
     )
 }
-
-export default HeaderCliente;
