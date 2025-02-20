@@ -11,11 +11,6 @@ function App() {
     <AuthProvider>
       <Router>
         <HeaderCliente />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
         <Footer />
       </Router>
     </AuthProvider>
