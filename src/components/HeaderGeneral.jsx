@@ -16,6 +16,7 @@ function Nav({link, icon, text}) {
 }
 
 export function HeaderGeneral(){
+    const navigate = useNavigate();
     return(
         <header className="header-container">
             <img onClick={() => navigate("/cupones")} src={logo} alt="Logo CM" className="Logo"/>

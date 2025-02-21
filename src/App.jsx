@@ -6,6 +6,7 @@ import { HeaderEmpleado } from "./components/HeaderEmpleado"
 import { HeaderAdminOfertante } from "./components/HeaderAdminOfertante";
 import { HeaderGeneralAdmin } from "./components/HeaderGeneralAdmin"
 
+import Home from "./pages/Home"
 import HomeCliente from "./pages/HomeCliente";
 import HomeAdminEmpresa from "./pages/HomeAdminEmpresa";
 import GestionOfertas from "./pages/GestionOfertas";
@@ -25,7 +26,9 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={ <Login/> }/>
+          <Route path="/register" element={ <Register /> } />
         </Routes>
         <Footer />
       </Router>
