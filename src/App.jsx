@@ -24,7 +24,7 @@ function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/gestion-empleados" element={<Empleados />} />
+      <Route path="/gestion-ofertas" element={<GestionOfertas />} />
       </Routes>
       <Footer />
     </Router>
