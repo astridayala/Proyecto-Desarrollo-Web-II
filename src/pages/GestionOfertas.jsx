@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { HeaderAdminOfertante } from "../components/HeaderAdminOfertante";
+import { db } from "../firebase/config"; // Importa Firestore desde la configuración de Firebase
+import { collection, addDoc } from "firebase/firestore";
 
 function GestionOfertas() {
-  const [ofertas, setOfertas] = useState([]);
   const [nuevaOferta, setNuevaOferta] = useState({
     titulo: "",
     precioRegular: "",
@@ -19,20 +20,32 @@ function GestionOfertas() {
     setNuevaOferta({ ...nuevaOferta, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newId = ofertas.length + 1;
-    setOfertas([...ofertas, { id: newId, ...nuevaOferta }]);
-    setNuevaOferta({
-      titulo: "",
-      precioRegular: "",
-      precioOferta: "",
-      fechaInicio: "",
-      fechaFin: "",
-      fechaLimiteUso: "",
-      descripcion: "",
-      otrosDetalles: "",
-    });
+
+    try {
+      await addDoc(collection(db, "ofertas"), {
+        ...nuevaOferta,
+        estado: "pendiente", // Se agrega el campo estado como "pendiente" por defecto
+      });
+
+      alert("Oferta registrada con éxito y marcada como pendiente de revisión.");
+
+      // Reiniciar el formulario después de guardar
+      setNuevaOferta({
+        titulo: "",
+        precioRegular: "",
+        precioOferta: "",
+        fechaInicio: "",
+        fechaFin: "",
+        fechaLimiteUso: "",
+        descripcion: "",
+        otrosDetalles: "",
+      });
+    } catch (error) {
+      console.error("Error al registrar la oferta:", error);
+      alert("Hubo un error al registrar la oferta.");
+    }
   };
 
   return (
@@ -40,7 +53,7 @@ function GestionOfertas() {
       <HeaderAdminOfertante />
       <main className="flex-grow container mx-auto p-5 pt-24 flex flex-col items-center">
         <h1 className="text-3xl font-semibold text-gray-800 mb-8">Gestión de Ofertas</h1>
-        
+
         <div className="w-full max-w-4xl bg-white p-8 rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Registrar Nueva Oferta</h2>
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -136,7 +149,7 @@ function GestionOfertas() {
               </div>
             </div>
             <div className="flex justify-center">
-              <button type="submit" className="w-full sm:w-auto bg-blue-600 text-black font-semibold px-8 py-3 rounded hover:bg-blue-700 transition">
+              <button type="submit" className="w-full sm:w-auto bg-blue-600 text-white font-semibold px-8 py-3 rounded hover:bg-blue-700 transition">
                 Registrar Oferta
               </button>
             </div>
