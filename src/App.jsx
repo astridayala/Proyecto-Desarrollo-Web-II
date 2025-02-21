@@ -10,6 +10,8 @@ import HomeCliente from "./pages/HomeCliente";
 import HomeAdminEmpresa from "./pages/HomeAdminEmpresa";
 import GestionOfertas from "./pages/GestionOfertas";
 import GestionEmpleados from "./pages/GestioEmpleados";
+import GestionEmpresas from "./pages/GestionEmpresas";
+
 
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
@@ -20,12 +22,14 @@ import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-      <Route path="/gestion-empleados" element={<GestionEmpleados />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </AuthProvider>
   );
 }
 
