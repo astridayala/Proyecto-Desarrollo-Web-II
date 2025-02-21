@@ -22,7 +22,7 @@ export function HeaderEmpleado() {
             <img onClick={() => navigate("/")} src={logo} alt="Logo CM" className="Logo" />
             <nav className="pages">
                 <ul>
-                    <Nav link="/canje-cupons" icon={faTicket} text="Canje de Cupones" />
+                    <Nav link="/empleadoCanjeo" icon={faTicket} text="Canje de Cupones" />
                     <Nav link="/login" icon={faRightFromBracket} text="Cerrar sesión" />
                 </ul>
             </nav>

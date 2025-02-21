@@ -10,6 +10,7 @@ import Home from "./pages/Home"
 import HomeAdmin from "./pages/HomeAdmin";
 import HomeCliente from "./pages/HomeCliente";
 import HomeAdminEmpresa from "./pages/HomeAdminEmpresa";
+import HomeEmpleado from "./pages/HomeEmpleado"
 
 import EstadoOfertas from "./pages/EstadoOfertas"
 
@@ -23,9 +24,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 import { AuthProvider } from "./context/AuthContext";
-import Empleados from "./pages/Empleados";
 import { Cupon } from "./components/Cupon";
 import EmpleadoCanjeo from "./pages/EmpleadoCanjeo"
+import Empleados from "./pages/Empleados";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/homeCliente" element={<HomeCliente/>} />
           <Route path="/homeAdmin" element={<HomeAdmin />} /> 
           <Route path="/homeAdminEmpresa" element={<HomeAdminEmpresa/>} />
+          <Route path="/homeEmpleado" element={< HomeEmpleado/>} />
 
           <Route path="/empleados" element={<Empleados/>} />
           <Route path="/estado-ofertas" element={<EstadoOfertas/>} />
@@ -50,7 +52,7 @@ function App() {
           <Route path="/register" element={ <Register /> } />
 
           <Route path="/cupon" element={<Cupon />} />
-          <Route path="/Canjeo" element={<EmpleadoCanjeo/>}/>
+          <Route path="/empleadoCanjeo" element={<EmpleadoCanjeo/>}/>
 
         </Routes>
       </Router>
