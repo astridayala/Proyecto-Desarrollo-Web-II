@@ -24,6 +24,7 @@ import Register from "./pages/Register";
 
 import { AuthProvider } from "./context/AuthContext";
 import Empleados from "./pages/Empleados";
+import { Cupon } from "./components/Cupon";
 
 function App() {
   return (
@@ -46,6 +47,8 @@ function App() {
 
           <Route path="/login" element={ <Login/> }/>
           <Route path="/register" element={ <Register /> } />
+
+          <Route path="/cupon" element={<Cupon />} />
 
         </Routes>
       </Router>
