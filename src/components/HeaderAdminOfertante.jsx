@@ -19,7 +19,7 @@ export function HeaderAdminOfertante() {
 
     return (
         <header className="header-container">
-            <img onClick={() => navigate("/gestion-ofertas")} src={logo} alt="Logo CM" className="Logo" />
+            <img onClick={() => navigate("/")} src={logo} alt="Logo CM" className="Logo" />
             <nav className="pages">
                 <ul>
                     <Nav link="/gestion-ofertas" icon={faTags} text="Registrar Ofertas" />

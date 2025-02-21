@@ -22,7 +22,7 @@ export function HeaderGeneralAdmin() {
 
     return (
         <header className="header-container">
-            <img onClick={() => navigate("/gestion-empresas")} src={logo} alt="Logo CM" className="Logo" />
+            <img onClick={() => navigate("/")} src={logo} alt="Logo CM" className="Logo" />
             <nav className="pages">
                 <ul>
                     <Nav link="/gestion-empresas" icon={faBuilding} text="Empresas" />

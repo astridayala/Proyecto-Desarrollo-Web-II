@@ -42,7 +42,7 @@ function App() {
           <Route path="/gestion-rubros" element={<GestionRubros/>} />
           <Route path="/gestion-clientes" element={<GestionClientes/>} />
           <Route path="/gestion-empleados" element={<GestionEmpleados/>} />
-          <Route path="/gestion-ofertas" element={<GestionOfertas/>} />
+          <Route path="/gestion-ofertas" element={<GestionOfertas/>}/>
 
           <Route path="/login" element={ <Login/> }/>
           <Route path="/register" element={ <Register /> } />

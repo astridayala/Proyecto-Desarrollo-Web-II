@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HeaderAdminOfertante } from "../components/HeaderAdminOfertante";
 import { useNavigate } from "react-router-dom";
+import { useMemo } from "react";
 
 // Esta función simula la obtención de ofertas registradas.
 // En una aplicación real, estas ofertas podrían provenir de una API o de un contexto global.
@@ -90,7 +91,6 @@ const obtenerOfertas = () => {
 function EstadoOfertas() {
   const [ofertas, setOfertas] = useState([]);
   const navigate = useNavigate();
-  const hoy = new Date();
 
   // Categorías para la visualización de ofertas
   const [categorias, setCategorias] = useState({
@@ -104,9 +104,10 @@ function EstadoOfertas() {
 
   // Al montar el componente se obtienen las ofertas y se clasifican
   useEffect(() => {
+    const hoy = new Date(); // Definir dentro del useEffect evita el bucle infinito
     const ofertasRegistradas = obtenerOfertas();
     setOfertas(ofertasRegistradas);
-
+  
     const nuevasCategorias = {
       "En espera de aprobación": [],
       "Ofertas aprobadas futuras": [],
@@ -115,9 +116,12 @@ function EstadoOfertas() {
       "Ofertas rechazadas": [],
       "Ofertas descartadas": [],
     };
-
+  
     ofertasRegistradas.forEach((oferta) => {
       const { categoria, fechaInicio, fechaFin } = oferta;
+      const inicio = new Date(fechaInicio);
+      const fin = new Date(fechaFin);
+  
       if (categoria === "En espera de aprobación") {
         nuevasCategorias["En espera de aprobación"].push(oferta);
       } else if (categoria === "Rechazada") {
@@ -125,10 +129,6 @@ function EstadoOfertas() {
       } else if (categoria === "Descartada") {
         nuevasCategorias["Ofertas descartadas"].push(oferta);
       } else if (categoria === "Aprobada") {
-        // Convertir las fechas a objetos Date para comparación
-        const inicio = new Date(fechaInicio);
-        const fin = new Date(fechaFin);
-
         if (hoy < inicio) {
           nuevasCategorias["Ofertas aprobadas futuras"].push(oferta);
         } else if (hoy >= inicio && hoy <= fin) {
@@ -138,9 +138,9 @@ function EstadoOfertas() {
         }
       }
     });
-
+  
     setCategorias(nuevasCategorias);
-  }, [hoy]);
+  }, []); 
 
   // Función auxiliar para renderizar una tabla con ofertas de una categoría
   const renderTablaOfertas = (titulo, ofertasCategoria) => {
