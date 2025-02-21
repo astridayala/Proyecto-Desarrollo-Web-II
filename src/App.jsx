@@ -8,6 +8,7 @@ import { HeaderGeneralAdmin } from "./components/HeaderGeneralAdmin"
 
 import HomeCliente from "./pages/HomeCliente";
 import HomeAdminEmpresa from "./pages/HomeAdminEmpresa";
+import GestionOfertas from "./pages/GestionOfertas";
 
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
@@ -32,6 +33,7 @@ function App() {
           <Route path="/homeAdminEmpresa" element={<HomeAdminEmpresa />}/>
           <Route path="/headerGeneralAdmin" element={<HeaderGeneralAdmin />}/>
           <Route path="/headerAdminOfertante" element={<HeaderAdminOfertante />}/>
+          <Route path="/gestion-ofertas" element={<GestionOfertas/>} />
         </Routes>
       </Router>
     </AuthProvider>
