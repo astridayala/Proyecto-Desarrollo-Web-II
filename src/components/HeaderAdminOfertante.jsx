@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, NavLink, useNavigate } from "re
 import { faTags, faUsers, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/CM-Logo.png";
 
+
 function Nav({ link, icon, text }) {
     return (
         <li className="page">
