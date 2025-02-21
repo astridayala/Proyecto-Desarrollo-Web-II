@@ -20,6 +20,7 @@ import Register from "./pages/Register";
 
 import { Footer } from './components/Footer';
 import { AuthProvider } from "./context/AuthContext";
+import HomeAdmin from "./pages/HomeAdmin";
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={ <Login/> }/>
           <Route path="/register" element={ <Register /> } />
+          <Route path="/gestion-empresas" element={< GestionEmpresas />} />
+          <Route path="/homeAdmin" element={<HomeAdmin />} /> 
         </Routes>
         <Footer />
       </Router>

@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BrowserRouter as Router, Routes, Route, NavLink, useNavigate } from "react-router-dom";
 import { faBuilding, faList, faUsers, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/CM-Logo.png";
+import GestionEmpresas from "../pages/GestionEmpresas";
 
 function Nav({ link, icon, text }) {
     return (

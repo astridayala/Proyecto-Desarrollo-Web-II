@@ -43,7 +43,6 @@ function GestionEmpresas() {
     <div className="min-h-screen bg-gray-100 flex flex-col">
       <HeaderGeneralAdmin />
       <main className="container mx-auto px-5 flex flex-col items-center">
-        {/* Contenedor del formulario */}
         <div className="form-container">
           <div className="formulario">
             <h2 className="head">Gestión de Empresas</h2>
@@ -121,16 +120,21 @@ function GestionEmpresas() {
               </div>
 
               <div className="inputContainer">
-                <input
-                  type="text"
-                  name="rubro"
-                  placeholder="Rubro"
-                  value={nuevaEmpresa.rubro}
-                  onChange={handleChange}
-                  required
-                  className="text"
-                />
-              </div>
+                <select
+                    name="rubro"
+                    value={nuevaEmpresa.rubro}
+                    onChange={handleChange}
+                    required
+                    className="text"
+                >
+                    <option value="">Seleccionar Rubro</option>
+                    <option value="Salud">Salud</option>
+                    <option value="Belleza">Viajes</option>
+                    <option value="Things">Comida</option>
+                    <option value="Viajes">Belleza</option>
+                    <option value="Comida">Things</option>
+                </select>
+                </div>
 
               <div className="inputContainer">
                 <input
@@ -154,16 +158,18 @@ function GestionEmpresas() {
           </div>
         </div>
 
-        {/* Lista de empresas */}
-        <div className="w-full max-w-4xl mt-10">
+        {/* Contenedor de las empresas registradas */}
+        <div className="empresas-container">
           {empresas.map((empresa) => (
-            <div key={empresa.id} className="bg-white p-4 rounded shadow mb-4 flex justify-between items-center">
+            <div key={empresa.id} className="empresa-card">
               <div>
-                <h2 className="text-xl font-semibold">{empresa.nombre} ({empresa.codigo})</h2>
+                <h2>{empresa.nombre} ({empresa.codigo})</h2>
                 <p>Rubro: {empresa.rubro}</p>
-                <p>Contacto: {empresa.contacto} - Tel: {empresa.telefono} - Email: {empresa.correo}</p>
+                <p>Contacto: {empresa.contacto}</p>
+                <p>Tel: {empresa.telefono}</p>
+                <p>Email: {empresa.correo}</p>             
               </div>
-              <button onClick={() => handleDelete(empresa.id)} className="bg-red-600 text-white px-3 py-1 rounded-lg hover:bg-red-700 transition">
+              <button onClick={() => handleDelete(empresa.id)} className="eliminar-btn">
                 Eliminar
               </button>
             </div>
@@ -176,4 +182,3 @@ function GestionEmpresas() {
 }
 
 export default GestionEmpresas;
-
