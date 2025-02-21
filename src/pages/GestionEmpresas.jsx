@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { HeaderGeneralAdmin } from "../components/HeaderGeneralAdmin";
-import { Footer } from "../components/Footer";
 
 function GestionEmpresas() {
   const [empresas, setEmpresas] = useState([]);
