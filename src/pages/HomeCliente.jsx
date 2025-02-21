@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { HeaderCliente } from "../components/HeaderClient";
+import { HeaderCliente } from "../components/HeaderCliente";
 import { useAuth } from "../context/AuthContext";
 
 const HomeCliente = () => {
