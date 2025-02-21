@@ -98,9 +98,6 @@
   margin: 0;
   font-weight: 700;
 }
-body{
-  background-color: var(--gris-nuevo);
-}
 footer {
   background-color: var(--azul-1);
   display: flex;
@@ -109,11 +106,112 @@ footer {
   width: 100%;
   padding: 10px 0;
   position: fixed;
+  bottom: 0; /* Asegura que esté siempre al fondo */
+  left: 0; /* Asegura que cubra todo el ancho */
+  z-index: 10; /* Asegura que esté por encima de otros elementos */
 }
-footer h3{
-  color: var(--blanco);
-  font-size: 0.9em;
+footer * {
+  color: white;
 }
+
+
+body {
+  background-color: var(--gris-nuevo);
+  padding-bottom: 60px; /* Espacio para que no se superponga el footer */
+}
+
+/* --------- ESTILOS RESPONSIVOS --------- */
+
+/* Tablets (Pantallas menores a 1024px) */
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 10px 50px;
+    height: 80px;
+  }
+
+  .Logo {
+    height: 80%;
+  }
+
+  .pages {
+    padding-right: 5%;
+  }
+
+  .page {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}
+
+/* Teléfonos (Pantallas menores a 768px) */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 20px;
+  }
+
+  .Logo {
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .pages {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pages ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .page {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  footer {
+    padding: 5px 0;
+    font-size: 14px;
+  }
+}
+
+/* Ajustes para teléfonos pequeños (480px o menos) */
+@media (max-width: 480px) {
+  .header-container {
+    padding: 10px 15px;
+  }
+
+  .Logo {
+    height: 50px;
+  }
+
+  .hamburger {
+    font-size: 32px; /* Botón de hamburguesa más grande */
+  }
+
+  .pages {
+    top: 60px;
+    padding: 15px 0;
+  }
+
+  .pages a {
+    font-size: 16px; /* Fuente más legible en móviles */
+  }
+
+  .pages li {
+    padding: 10px;
+  }
+}
+
 /*
 #pages a {
     display: flex;
