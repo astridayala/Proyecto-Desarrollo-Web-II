@@ -1,14 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { HeaderCliente } from './components/HeaderClient';
+import { HeaderCliente } from './components/HeaderCliente';
 import { Footer } from './components/Footer';
-import { HeaderGeneralAdmin } from "./components/HeaderGeneralAdmin";
-import { HeaderAdminOfertante } from "./components/HeaderAdminOfertante";
-import { HeaderEmpleado } from "./components/HeaderEmpleado";
 
 function App() {
   return (
     <Router>
-      <HeaderEmpleado />
+      <HeaderCliente />
       <Footer />
     </Router>
   );
