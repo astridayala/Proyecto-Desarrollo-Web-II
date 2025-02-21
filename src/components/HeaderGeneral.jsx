@@ -22,7 +22,6 @@ export function HeaderGeneral(){
             <img onClick={() => navigate("/cupones")} src={logo} alt="Logo CM" className="Logo"/>
             <nav className="pages">
                 <ul className="link">
-                    <Nav link="/cupones" icon={faTicket} text="Cupones" />
                     <Nav link="/login" icon={faCircleUser} text="Iniciar Sesion"/>
                 </ul>
             </nav>
