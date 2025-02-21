@@ -8,14 +8,13 @@ function Nav({ link, icon, text }) {
         <li className="page">
             <NavLink to={link} className="botton">
                 <FontAwesomeIcon icon={icon} className="icon" />
-                <h2 className="text">{text}</h2>
+                <h2 className="textNav">{text}</h2>
             </NavLink>
         </li>
     );
 }
 
 export function HeaderGeneralAdmin() {
-    const navigate = useNavigate();
 
     return (
         <header className="header-container">
