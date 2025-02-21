@@ -19,12 +19,15 @@ import { Footer } from './components/Footer';
 import { AuthProvider } from "./context/AuthContext";
 import EstadoOfertas from "./pages/EstadoOfertas";
 import Empleados from "./pages/Empleados";
+import EmpleadoCanjeo from "./pages/EmpleadoCanjeo";
 
 function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/gestion-empleados" element={<Empleados />} />
+        <Route path="/gestion-empleados" element={<Empleados />} />
+        <Route path="/Canjeo" element={<EmpleadoCanjeo/>}/>
+      
       </Routes>
       <Footer />
     </Router>
