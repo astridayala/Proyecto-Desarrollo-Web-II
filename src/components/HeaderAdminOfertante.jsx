@@ -1,8 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BrowserRouter as Router, Routes, Route, NavLink, useNavigate } from "react-router-dom";
-import { faTags, faUsers, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faTags, faUsers, faRightFromBracket, faClipboardList } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/CM-Logo.png";
-
 
 function Nav({ link, icon, text }) {
     return (
@@ -23,7 +22,8 @@ export function HeaderAdminOfertante() {
             <img onClick={() => navigate("/")} src={logo} alt="Logo CM" className="Logo" />
             <nav className="pages">
                 <ul>
-                    <Nav link="/gestion-ofertas" icon={faTags} text="Ofertas" />
+                    <Nav link="/gestion-ofertas" icon={faTags} text="Registrar Ofertas" />
+                    <Nav link="/estados-ofertas" icon={faClipboardList} text="Estados de las Ofertas" />
                     <Nav link="/gestion-empleados" icon={faUsers} text="Empleados" />
                     <Nav link="/login" icon={faRightFromBracket} text="Cerrar sesión" />
                 </ul>
