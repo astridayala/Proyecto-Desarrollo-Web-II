@@ -24,7 +24,6 @@ export function HeaderCliente() {
                 <ul className="link">
                     <Nav link="/comprar-cupones" icon={faShoppingCart} text="Comprar Cupones" />
                     <Nav link="/mis-cupones" icon={faTicket} text="Mis Cupones" />
-                    <Nav link="/perfil" icon={faUser} text="Mi Perfil"/>
                     <Nav link="/login" icon={faRightFromBracket} text="Cerrar sesión" />
                 </ul>
             </nav>
