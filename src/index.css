@@ -33,6 +33,7 @@ main {
   --color1: #333;
   --colo2: #555;
   --rojo: #e63946;
+  --rojo-2: #b3222d;
   --color3: #ddd;
 }
 *{
@@ -246,7 +247,7 @@ footer h3{
 }
 
 
-/* Estilos generales para el header */
+/* Estilos para el header */
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -405,6 +406,47 @@ footer h3{
   .textNav {
     font-size: 14px;
   }
+}
+
+.empresas-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.empresa-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.empresa-card h2 {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.empresa-card p {
+  font-size: 1em;
+  color: var(--gris-1);
+}
+
+.eliminar-btn {
+  background-color: var(--rojo);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.eliminar-btn:hover {
+  background-color: var(--rojo-2);
 }
 
 /*  
