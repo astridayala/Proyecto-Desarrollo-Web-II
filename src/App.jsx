@@ -10,8 +10,10 @@ import Home from "./pages/Home"
 import HomeCliente from "./pages/HomeCliente";
 import HomeAdminEmpresa from "./pages/HomeAdminEmpresa";
 import GestionOfertas from "./pages/GestionOfertas";
-import GestionEmpleados from "./pages/GestioEmpleados";
+import GestionEmpleados from "./pages/GestionEmpleados";
 import GestionEmpresas from "./pages/GestionEmpresas";
+import GestionClientes from "./pages/GestionClientes"
+import GestionRubros from "./pages/GestionRubros";
 
 
 import Login from "./pages/Login";
@@ -32,6 +34,8 @@ function App() {
           <Route path="/register" element={ <Register /> } />
           <Route path="/gestion-empresas" element={< GestionEmpresas />} />
           <Route path="/homeAdmin" element={<HomeAdmin />} /> 
+          <Route path="/gestion-rubros" element={<GestionRubros/>} />
+          <Route path="/gestion-clientes" element={<GestionClientes/>} />
         </Routes>
         <Footer />
       </Router>

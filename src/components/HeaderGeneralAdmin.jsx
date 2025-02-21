@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, NavLink, useNavigate } from "re
 import { faBuilding, faList, faUsers, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/CM-Logo.png";
 import GestionEmpresas from "../pages/GestionEmpresas";
+import GestionRubros from "../pages/GestionRubros";
+import GestionClientes from "../pages/GestionClientes"
 
 function Nav({ link, icon, text }) {
     return (
