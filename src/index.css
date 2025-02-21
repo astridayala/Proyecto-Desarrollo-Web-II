@@ -106,20 +106,6 @@
 body{
   background-color: var(--gris-nuevo);
 }
-footer {
-  background-color: var(--azul-1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0;
-}
-footer h3{
-  color: var(--blanco);
-  font-size: 0.9em;
-}
 .form-container{
   display: flex;
   justify-content: center;
@@ -233,9 +219,6 @@ footer h3{
     font-size: 14px;
   }
 
-  footer h3 {
-    font-size: 0.8em;
-  }
 }
 
 
@@ -330,10 +313,6 @@ footer h3{
   
   .textNav {
     font-size: 14px;
-  }
-
-  footer h3 {
-    font-size: 0.8em;
   }
 
 

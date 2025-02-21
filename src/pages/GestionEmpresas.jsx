@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { HeaderGeneralAdmin } from "../components/HeaderGeneralAdmin";
-import { Footer } from "../components/Footer";
-
 function GestionEmpresas() {
   const [empresas, setEmpresas] = useState([]);
   const [nuevaEmpresa, setNuevaEmpresa] = useState({
@@ -176,7 +174,6 @@ function GestionEmpresas() {
           ))}
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

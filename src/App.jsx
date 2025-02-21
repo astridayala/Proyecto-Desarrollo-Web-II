@@ -20,7 +20,6 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 
-import { Footer } from './components/Footer';
 import { AuthProvider } from "./context/AuthContext";
 import HomeAdmin from "./pages/HomeAdmin";
 
@@ -37,7 +36,6 @@ function App() {
           <Route path="/gestion-rubros" element={<GestionRubros/>} />
           <Route path="/gestion-clientes" element={<GestionClientes/>} />
         </Routes>
-        <Footer />
       </Router>
     </AuthProvider>
   );
