@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";  // 🔹 Importar Link
 import { HeaderGeneral } from "../components/HeaderGeneral";
 import { db } from "../firebase/config";
 import { collection, getDocs } from "firebase/firestore";
@@ -11,7 +12,7 @@ const Home = () => {
       const querySnapshot = await getDocs(collection(db, "ofertas"));
       const ofertasAprobadas = querySnapshot.docs
         .map((doc) => ({ id: doc.id, ...doc.data() }))
-        .filter((oferta) => oferta.estado === "aprobada"); 
+        .filter((oferta) => oferta.estado === "aprobada");
 
       setOfertas(ofertasAprobadas);
     };
@@ -24,7 +25,7 @@ const Home = () => {
       <HeaderGeneral />
       <main className="container mx-auto p-5 pt-24">
         <h1 className="text-3xl font-semibold text-gray-800 mb-6">Ofertas Disponibles</h1>
-        
+
         {ofertas.length === 0 ? (
           <p className="text-center text-gray-600">No hay ofertas disponibles.</p>
         ) : (
