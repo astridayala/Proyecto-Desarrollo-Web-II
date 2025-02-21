@@ -20,17 +20,17 @@ function Empleados() {
   
     try {
       if (editIndex !== null) {
-        // Actualizar un empleado existente en Firestore
+        
         const empleadoRef = doc(db, "empleados", empleados[editIndex].id);
         await updateDoc(empleadoRef, form);
   
-        // Actualizar el estado local
+        
         const updatedEmpleados = [...empleados];
         updatedEmpleados[editIndex] = { id: empleados[editIndex].id, ...form };
         setEmpleados(updatedEmpleados);
         setEditIndex(null);
       } else {
-        // Agregar un nuevo empleado a Firestore
+        
         const docRef = await addDoc(collection(db, "empleados"), form);
         setEmpleados([...empleados, { id: docRef.id, ...form }]);
       }
