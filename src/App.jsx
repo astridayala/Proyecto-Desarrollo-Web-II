@@ -3,11 +3,12 @@ import { HeaderCliente } from './components/HeaderClient';
 import { Footer } from './components/Footer';
 import { HeaderGeneralAdmin } from "./components/HeaderGeneralAdmin";
 import { HeaderAdminOfertante } from "./components/HeaderAdminOfertante";
+import { HeaderEmpleado } from "./components/HeaderEmpleado";
 
 function App() {
   return (
     <Router>
-      <HeaderAdminOfertante />
+      <HeaderEmpleado />
       <Footer />
     </Router>
   );
