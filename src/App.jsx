@@ -33,6 +33,7 @@ function App() {
           <Route path="/register" element={ <Register /> } />
           <Route path="/gestion-empresas" element={< GestionEmpresas />} />
           <Route path="/homeAdmin" element={<HomeAdmin />} /> 
+          <Route path="/homeAdminEmpresa" element={<HomeAdminEmpresa/>} />
           <Route path="/gestion-rubros" element={<GestionRubros/>} />
           <Route path="/gestion-clientes" element={<GestionClientes/>} />
         </Routes>

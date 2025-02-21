@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { HeaderCliente } from "../components/HeaderClient";
 
-const HomeAdminEmpresa = () => {
+const HomeCliente = () => {
   const { user } = useAuth();
 
   return (
@@ -17,4 +18,4 @@ const HomeAdminEmpresa = () => {
   );
 };
 
-export default HomeAdminEmpresa;
+export default HomeCliente;
