@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { HeaderEmpleado } from "../components/HeaderEmpleado";
 
-const HomeCliente = () => {
+const HomeEmpleado = () => {
   const { user } = useAuth();
   return (
     <>
@@ -11,4 +11,4 @@ const HomeCliente = () => {
   );
 };
 
-export default HomeCliente;
+export default HomeEmpleado;
