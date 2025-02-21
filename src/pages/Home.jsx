@@ -3,11 +3,11 @@ import { HeaderCliente } from "../components/HeaderCliente";
 import { useAuth } from "../context/AuthContext";
 import { HeaderGeneral } from "../components/HeaderGeneral";
 
-const HomeCliente = () => {
+const Home = () => {
   const { user } = useAuth();
   return (
     <HeaderGeneral/>
   );
 };
 
-export default HomeCliente;
+export default Home;

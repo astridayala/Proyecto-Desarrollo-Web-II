@@ -6,12 +6,23 @@ import GestionEmpresas from "../pages/GestionEmpresas";
 import GestionRubros from "../pages/GestionRubros";
 import GestionClientes from "../pages/GestionClientes"
 
+function Nav({ link, icon, text }) {
+    return (
+        <li className="page">
+            <NavLink to={link} className="botton">
+                <FontAwesomeIcon icon={icon} className="icon" />
+                <h2 className="textNav">{text}</h2>
+            </NavLink>
+        </li>
+    );
+}
+
 export function HeaderGeneralAdmin() {
     const navigate = useNavigate();
 
     return (
         <header className="header-container">
-            <img onClick={() => navigate("/")} src={logo} alt="Logo CM" className="Logo" />
+            <img onClick={() => navigate("/gestion-empresas")} src={logo} alt="Logo CM" className="Logo" />
             <nav className="pages">
                 <ul>
                     <Nav link="/gestion-empresas" icon={faBuilding} text="Empresas" />
@@ -21,16 +32,5 @@ export function HeaderGeneralAdmin() {
                 </ul>
             </nav>
         </header>
-    );
-}
-
-function Nav({ link, icon, text }) {
-    return (
-        <li className="page">
-            <NavLink to={link} className="botton">
-                <FontAwesomeIcon icon={icon} className="icon" />
-                <h2 className="textNav">{text}</h2>
-            </NavLink>
-        </li>
     );
 }

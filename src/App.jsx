@@ -20,7 +20,6 @@ import GestionClientes from "./pages/GestionClientes"
 import GestionRubros from "./pages/GestionRubros";
 
 import Login from "./pages/Login";
-import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 
 import { AuthProvider } from "./context/AuthContext";
