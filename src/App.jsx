@@ -22,7 +22,7 @@ function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/gestion-empleados" element={<GestionEmpleados />} />
+      <Route path="/headerGeneral" element={<HeaderGeneral />} />
       </Routes>
       <Footer />
     </Router>

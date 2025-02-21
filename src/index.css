@@ -210,6 +210,203 @@ footer h3{
   margin-bottom: 15px;
 }
 
+.subrayado {
+  text-decoration: none;
+}
+
+ /* Responsividad para tablet y desktop */
+ @media screen and (max-width: 1024px) {
+  .header-container {
+    padding: 10px 50px;
+  }
+
+  .pages {
+    padding-right: 10px;
+  }
+
+  .formulario {
+    width: 90%;
+    min-width: 350px;
+  }
+  
+  .page {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  
+  .textNav {
+    font-size: 14px;
+  }
+
+  footer h3 {
+    font-size: 0.8em;
+  }
+}
+
+
+/* Estilos generales para el header */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px 20px;
+}
+
+.Logo {
+  height: 60%;
+}
+
+/* Hacer que el texto del logo sea responsivo */
+.text-logo {
+  font-size: 4vw; /* Reducimos el tamaño de la fuente para pantallas grandes */
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    padding: 10px 20px;
+    height: auto;
+  }
+
+  /* Ajustamos el logo y el texto para pantallas pequeñas */
+  .Logo {
+    height: 50%; /* Ajustamos el tamaño del logo */
+    max-width: 100%; /* Evitamos que el logo sea más grande que el contenedor */
+  }
+
+  .text-logo {
+    font-size: 8vw; /* Ajuste de tamaño de la fuente según el ancho de la pantalla */
+    text-align: center;
+  }
+
+  .pages {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .hamburger-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .page {
+    font-size: 14px;
+    padding: 6px 10px;
+    display: none;
+  }
+
+  .link.open .page {
+    display: block;
+  }
+
+  .textNav {
+    font-size: 14px;
+  }
+}/* Responsividad para tablet y desktop */
+@media screen and (max-width: 1024px) {
+  .header-container {
+    padding: 10px 50px;
+  }
+  .hamburger-icon {
+    display: block; /* Asegura que el icono se muestre en pantallas pequeñas */
+  }
+
+  .pages {
+    padding-right: 10px;
+  }
+
+  .formulario {
+    width: 90%;
+    min-width: 350px;
+  }
+
+  .page {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .textNav {
+    font-size: 14px;
+  }
+
+  footer h3 {
+    font-size: 0.8em;
+  }
+}
+/* Responsividad para desktop */
+@media screen and (min-width: 1025px) {
+  .hamburger-icon {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    padding: 10px 20px;
+    height: auto;
+  }
+
+  /* Ajustamos el logo y el texto para pantallas pequeñas */
+  .Logo {
+    height: 50%; /* Ajustamos el tamaño del logo */
+    max-width: 100%; /* Evitamos que el logo sea más grande que el contenedor */
+  }
+
+  .text-logo {
+    font-size: 8vw; /* Ajuste de tamaño de la fuente según el ancho de la pantalla */
+    text-align: center;
+  }
+
+  .pages {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .hamburger-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+    position: absolute;
+    right: 20px;
+    top: 85px;
+  }
+
+  .page {
+    font-size: 14px;
+    padding: 6px 10px;
+    display: none;
+  }
+
+  .link.open .page {
+    display: block;
+  }
+
+  .textNav {
+    font-size: 14px;
+  }
+}
+
+/*  
 /*
 #pages a {
     display: flex;
