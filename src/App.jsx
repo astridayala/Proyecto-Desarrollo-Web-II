@@ -18,12 +18,13 @@ import Register from "./pages/Register";
 import { Footer } from './components/Footer';
 import { AuthProvider } from "./context/AuthContext";
 import EstadoOfertas from "./pages/EstadoOfertas";
+import Empleados from "./pages/Empleados";
 
 function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/estados-ofertas" element={<EstadoOfertas />} />
+      <Route path="/gestion-empleados" element={<Empleados />} />
       </Routes>
       <Footer />
     </Router>
