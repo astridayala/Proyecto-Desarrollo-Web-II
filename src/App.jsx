@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { HeaderCliente } from './components/HeaderCliente';
 import { Footer } from './components/Footer';
+import GestionOfertas from "./pages/GestionOfertas";
 
 function App() {
   return (
     <Router>
-      <HeaderCliente />
+      <Routes>
+      <Route path="/gestion-ofertas" element={<GestionOfertas />} />
+      </Routes>
       <Footer />
     </Router>
   );
