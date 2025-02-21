@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root{
   --celeste-1: #234459;
   --celeste-2: #3C7499;
   --celeste-3: #5AAEE6;
   --celeste-4: #94C1FF;
+  --celeste-5: #258cd2;
+  --celeste-6: #2f5875;
   --azul: #1d3557;
 
   --azul-1: #012E40;
@@ -92,11 +97,14 @@
   text-decoration: none;
 }
 
-.text{
+.textNav{
   color: var(--blanco);
   font-size: 16px;
   margin: 0;
   font-weight: 700;
+}
+body{
+  background-color: var(--gris-nuevo);
 }
 footer {
   background-color: var(--azul-1);
@@ -106,110 +114,100 @@ footer {
   width: 100%;
   padding: 10px 0;
   position: fixed;
-  bottom: 0; /* Asegura que esté siempre al fondo */
-  left: 0; /* Asegura que cubra todo el ancho */
-  z-index: 10; /* Asegura que esté por encima de otros elementos */
+  bottom: 0;
 }
-footer * {
-  color: white;
+footer h3{
+  color: var(--blanco);
+  font-size: 0.9em;
 }
-
-
-body {
-  background-color: var(--gris-nuevo);
-  padding-bottom: 60px; /* Espacio para que no se superponga el footer */
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 100vh;
 }
-
-/* --------- ESTILOS RESPONSIVOS --------- */
-
-/* Tablets (Pantallas menores a 1024px) */
-@media (max-width: 1024px) {
-  .header-container {
-    padding: 10px 50px;
-    height: 80px;
-  }
-
-  .Logo {
-    height: 80%;
-  }
-
-  .pages {
-    padding-right: 5%;
-  }
-
-  .page {
-    padding: 6px 10px;
-    font-size: 14px;
-  }
-
-  .text {
-    font-size: 14px;
-  }
+.logo-CM{
+  margin: 0;
+  width: 120px;
+  margin-bottom:20px;
 }
-
-/* Teléfonos (Pantallas menores a 768px) */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    height: auto;
-    padding: 15px 20px;
-  }
-
-  .Logo {
-    height: 60px;
-    margin-bottom: 10px;
-  }
-
-  .pages {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .pages ul {
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .page {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  footer {
-    padding: 5px 0;
-    font-size: 14px;
-  }
+.imgContainer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
-
-/* Ajustes para teléfonos pequeños (480px o menos) */
-@media (max-width: 480px) {
-  .header-container {
-    padding: 10px 15px;
-  }
-
-  .Logo {
-    height: 50px;
-  }
-
-  .hamburger {
-    font-size: 32px; /* Botón de hamburguesa más grande */
-  }
-
-  .pages {
-    top: 60px;
-    padding: 15px 0;
-  }
-
-  .pages a {
-    font-size: 16px; /* Fuente más legible en móviles */
-  }
-
-  .pages li {
-    padding: 10px;
-  }
+.formulario {
+  width: 80%;
+  max-width: 500px;
+  min-width: 400px;
+  padding: 25px;
+  background-color: var(--gris);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+}
+.head {
+  padding-bottom: 15px;
+  padding-top: 0px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  font-family: Montserrat Subrayada;
+  color: var(--azul-3);
+  font-size: 1.5em;
+  margin: 0;
+}
+.logIn {
+  padding: 20px 25px;
+}
+.text {
+  width: 85%;
+  padding: 0 10px;
+  background-color: var(--blanco);
+  border: 1px solid var(--celeste-3);
+  color: var(--azul-1);
+  height: 40px;
+  border-radius: 0 5px 5px 0;
+  outline: none;
+  font-size: 1em;
+}
+.boton, .botonIngresar{
+  width: 100%;
+  padding: 10px;
+  background-color: var(--celeste-2);
+  border: none;
+  color: var(--blanco);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.boton a{
+  color: var(--blanco);
+  text-decoration: none;
+}
+.boton:hover {
+  background-color: var(--celeste-6);
+}
+.botonIngresar{
+  background-color: var(--celeste-3);
+  margin-bottom: 10px;
+}
+.botonIngresar:hover{
+  background-color: var(--celeste-5);
+}
+.iconos{
+  color: var(--blanco);
+  font-size: large;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.inputContainer{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 /*
