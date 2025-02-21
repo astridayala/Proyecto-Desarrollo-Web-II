@@ -102,7 +102,7 @@ const CuponCanje = () => {
                     <button
                         onClick={handleCanjearCupon}
                         disabled={cuponCanjeado || dui.length !== 9}
-                        className={`w-full bg-blue-500 text-white py-2 rounded-lg font-semibold ${cuponCanjeado || dui.length !== 9
+                        className={`w-full bg-blue-500 text-black py-2 rounded-lg font-semibold ${cuponCanjeado || dui.length !== 9
                                 ? 'opacity-50 cursor-not-allowed'
                                 : 'hover:bg-blue-600'
                             }`}
