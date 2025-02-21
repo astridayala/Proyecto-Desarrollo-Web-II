@@ -19,12 +19,12 @@ export function HeaderAdminOfertante() {
 
     return (
         <header className="header-container">
-            <img onClick={() => navigate("/")} src={logo} alt="Logo CM" className="Logo" />
+            <img onClick={() => navigate("/gestion-ofertas")} src={logo} alt="Logo CM" className="Logo" />
             <nav className="pages">
                 <ul>
                     <Nav link="/gestion-ofertas" icon={faTags} text="Registrar Ofertas" />
-                    <Nav link="/estados-ofertas" icon={faClipboardList} text="Estados de las Ofertas" />
-                    <Nav link="/gestion-empleados" icon={faUsers} text="Empleados" />
+                    <Nav link="/estado-ofertas" icon={faClipboardList} text="Estados de las Ofertas" />
+                    <Nav link="/empleados" icon={faUsers} text="Empleados" />
                     <Nav link="/login" icon={faRightFromBracket} text="Cerrar sesión" />
                 </ul>
             </nav>

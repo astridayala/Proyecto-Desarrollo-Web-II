@@ -2,6 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BrowserRouter as Router, Routes, Route, NavLink, useNavigate } from "react-router-dom";
 import { faBuilding, faList, faUsers, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/CM-Logo.png";
+import GestionEmpresas from "../pages/GestionEmpresas";
+import GestionRubros from "../pages/GestionRubros";
+import GestionClientes from "../pages/GestionClientes"
 
 function Nav({ link, icon, text }) {
     return (
@@ -15,10 +18,11 @@ function Nav({ link, icon, text }) {
 }
 
 export function HeaderGeneralAdmin() {
+    const navigate = useNavigate();
 
     return (
         <header className="header-container">
-            <img onClick={() => navigate("/")} src={logo} alt="Logo CM" className="Logo" />
+            <img onClick={() => navigate("/gestion-empresas")} src={logo} alt="Logo CM" className="Logo" />
             <nav className="pages">
                 <ul>
                     <Nav link="/gestion-empresas" icon={faBuilding} text="Empresas" />

@@ -1,4 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { HeaderAdminOfertante } from "../components/HeaderAdminOfertante";
+import { useNavigate } from "react-router-dom";
+import { db } from "../firebase/config";
+import { collection, addDoc, updateDoc, doc, deleteDoc, getDocs } from "firebase/firestore";
+
 
 function Empleados() {
   const [empleados, setEmpleados] = useState([]);
@@ -10,30 +15,70 @@ function Empleados() {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (editIndex !== null) {
-      const updatedEmpleados = [...empleados];
-      updatedEmpleados[editIndex] = form;
-      setEmpleados(updatedEmpleados);
-      setEditIndex(null);
-    } else {
-      setEmpleados([...empleados, form]);
+  
+    try {
+      if (editIndex !== null) {
+        
+        const empleadoRef = doc(db, "empleados", empleados[editIndex].id);
+        await updateDoc(empleadoRef, form);
+  
+        
+        const updatedEmpleados = [...empleados];
+        updatedEmpleados[editIndex] = { id: empleados[editIndex].id, ...form };
+        setEmpleados(updatedEmpleados);
+        setEditIndex(null);
+      } else {
+        
+        const docRef = await addDoc(collection(db, "empleados"), form);
+        setEmpleados([...empleados, { id: docRef.id, ...form }]);
+      }
+  
+      setForm({ nombres: "", apellidos: "", correo: "" });
+  
+    } catch (error) {
+      console.error("Error al guardar el empleado:", error);
     }
-    setForm({ nombres: "", apellidos: "", correo: "" });
   };
+
+  const fetchEmpleados = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(db, "empleados"));
+      const empleadosData = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setEmpleados(empleadosData);
+    } catch (error) {
+      console.error("Error al obtener empleados:", error);
+    }
+  };
+  
+  useEffect(() => {
+    fetchEmpleados();
+  }, []);
+
+  
 
   const handleEdit = (index) => {
     setForm(empleados[index]);
     setEditIndex(index);
   };
 
-  const handleDelete = (index) => {
-    setEmpleados(empleados.filter((_, i) => i !== index));
+  const handleDelete = async (index) => {
+    try {
+      const empleadoId = empleados[index].id;
+      await deleteDoc(doc(db, "empleados", empleadoId));
+  
+      // Actualizar el estado local
+      setEmpleados(empleados.filter((_, i) => i !== index));
+  
+    } catch (error) {
+      console.error("Error al eliminar empleado:", error);
+    }
   };
 
   return (
     <div className="container mx-auto p-8 pt-24 bg-gray-100 min-h-screen">
+      <HeaderAdminOfertante/>
       <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Gestión de Empleados</h1>
       <form 
         onSubmit={handleSubmit} 
