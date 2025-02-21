@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
-import { HeaderCliente } from "../components/HeaderCliente";
 import { useAuth } from "../context/AuthContext";
-import { HeaderGeneral } from "../components/HeaderGeneral";
+import { HeaderEmpleado } from "../components/HeaderEmpleado";
+import { Footer } from "../components/Footer";
 
 const HomeCliente = () => {
   const { user } = useAuth();
   return (
-    <HeaderGeneral/>
+    <>
+        <HeaderEmpleado/>
+        
+        <Footer />
+    </>
   );
 };
 
