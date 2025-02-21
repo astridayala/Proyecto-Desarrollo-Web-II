@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+main {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-top: 50px; /* Más espacio antes del formulario */
+  height: calc(100vh - 140px);
+}
 :root{
   --celeste-1: #234459;
   --celeste-2: #3C7499;
@@ -106,12 +113,28 @@
 body{
   background-color: var(--gris-nuevo);
 }
+footer {
+  background-color: var(--azul-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+}
+footer h3{
+  color: var(--blanco);
+  font-size: 0.9em;
+}
 .form-container{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-width: 100vh;
+  margin-top: 20px; /* Aumentamos el margen superior */
+  max-height: 80vh;
+  overflow-y: auto;
 }
 .logo-CM{
   margin: 0;
@@ -124,14 +147,14 @@ body{
   width: 100%;
 }
 .formulario {
-  width: 80%;
+  width: 100%;
   max-width: 500px;
   min-width: 400px;
   padding: 25px;
   background-color: var(--gris);
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex-grow: 1;
+  flex-grow: 0.5px;
 }
 .head {
   padding-bottom: 15px;

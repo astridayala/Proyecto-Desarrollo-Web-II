@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HeaderGeneralAdmin } from "../components/HeaderGeneralAdmin";
+import { Footer } from "../components/Footer";
+
 function GestionEmpresas() {
   const [empresas, setEmpresas] = useState([]);
   const [nuevaEmpresa, setNuevaEmpresa] = useState({
@@ -13,34 +15,69 @@ function GestionEmpresas() {
     porcentajeComision: 0.1,
   });
 
+  // Manejar cambios en los inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNuevaEmpresa({ ...nuevaEmpresa, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  // Cargar empresas desde Firebase
+  useEffect(() => {
+    const fetchEmpresas = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "clientes"));
+        const empresasData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setEmpresas(empresasData);
+      } catch (error) {
+        console.error("Error al obtener empresas: ", error);
+      }
+    };
+
+    fetchEmpresas();
+  }, []);
+
+  // Agregar empresa a Firebase
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setEmpresas([...empresas, { id: empresas.length + 1, ...nuevaEmpresa }]);
-    setNuevaEmpresa({
-      nombre: "",
-      codigo: "",
-      direccion: "",
-      contacto: "",
-      telefono: "",
-      correo: "",
-      rubro: "",
-      porcentajeComision: 0.1,
-    });
+
+    try {
+      const docRef = await addDoc(collection(db, "clientes"), nuevaEmpresa);
+      console.log("Empresa agregada con ID: ", docRef.id);
+
+      setEmpresas([...empresas, { id: docRef.id, ...nuevaEmpresa }]);
+
+      setNuevaEmpresa({
+        nombre: "",
+        codigo: "",
+        direccion: "",
+        contacto: "",
+        telefono: "",
+        correo: "",
+        rubro: "",
+        porcentajeComision: 0.1,
+      });
+    } catch (error) {
+      console.error("Error al agregar empresa: ", error);
+    }
   };
 
-  const handleDelete = (id) => {
-    setEmpresas(empresas.filter((empresa) => empresa.id !== id));
+  // Eliminar empresa de Firebase
+  const handleDelete = async (id) => {
+    try {
+      await deleteDoc(doc(db, "clientes", id));
+      setEmpresas(empresas.filter((empresa) => empresa.id !== id));
+    } catch (error) {
+      console.error("Error al eliminar empresa: ", error);
+    }
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       <HeaderGeneralAdmin />
-      <main className="container mx-auto px-5 flex flex-col items-center">
+      <main className="container mx-auto px-5 flex flex-col items-center pt-36 flex-grow overflow-y-auto h-[calc(100vh-140px)]">
         <div className="form-container">
           <div className="formulario">
             <h2 className="head">Gestión de Empresas</h2>
@@ -119,20 +156,19 @@ function GestionEmpresas() {
 
               <div className="inputContainer">
                 <select
-                    name="rubro"
-                    value={nuevaEmpresa.rubro}
-                    onChange={handleChange}
-                    required
-                    className="text"
+                  name="rubro"
+                  value={nuevaEmpresa.rubro}
+                  onChange={handleChange}
+                  required
+                  className="text"
                 >
-                    <option value="">Seleccionar Rubro</option>
-                    <option value="Salud">Salud</option>
-                    <option value="Belleza">Viajes</option>
-                    <option value="Things">Comida</option>
-                    <option value="Viajes">Belleza</option>
-                    <option value="Comida">Things</option>
+                  <option value="">Seleccionar Rubro</option>
+                  <option value="Salud">Salud</option>
+                  <option value="Belleza">Belleza</option>
+                  <option value="Viajes">Viajes</option>
+                  <option value="Comida">Comida</option>
                 </select>
-                </div>
+              </div>
 
               <div className="inputContainer">
                 <input
@@ -158,20 +194,29 @@ function GestionEmpresas() {
 
         {/* Contenedor de las empresas registradas */}
         <div className="empresas-container">
-          {empresas.map((empresa) => (
-            <div key={empresa.id} className="empresa-card">
-              <div>
-                <h2>{empresa.nombre} ({empresa.codigo})</h2>
-                <p>Rubro: {empresa.rubro}</p>
-                <p>Contacto: {empresa.contacto}</p>
-                <p>Tel: {empresa.telefono}</p>
-                <p>Email: {empresa.correo}</p>             
+          {empresas.length === 0 ? (
+            <p>No hay empresas registradas.</p>
+          ) : (
+            empresas.map((empresa) => (
+              <div key={empresa.id} className="empresa-card">
+                <div>
+                  <h2>
+                    {empresa.nombre} ({empresa.codigo})
+                  </h2>
+                  <p>Rubro: {empresa.rubro}</p>
+                  <p>Contacto: {empresa.contacto}</p>
+                  <p>Tel: {empresa.telefono}</p>
+                  <p>Email: {empresa.correo}</p>
+                </div>
+                <button
+                  onClick={() => handleDelete(empresa.id)}
+                  className="eliminar-btn"
+                >
+                  Eliminar
+                </button>
               </div>
-              <button onClick={() => handleDelete(empresa.id)} className="eliminar-btn">
-                Eliminar
-              </button>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </main>
     </div>
