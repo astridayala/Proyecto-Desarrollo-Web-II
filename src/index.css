@@ -8,7 +8,8 @@
 main {
   flex-grow: 1;
   overflow-y: auto;
-  padding-top: 50px; /* Más espacio antes del formulario */
+  margin-top: 0px;
+  padding-top: 0px;
   height: calc(100vh - 140px);
 }
 :root{
