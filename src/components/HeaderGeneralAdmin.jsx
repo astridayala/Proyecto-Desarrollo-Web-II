@@ -4,18 +4,8 @@ import { faBuilding, faList, faUsers, faRightFromBracket } from "@fortawesome/fr
 import logo from "../assets/CM-Logo.png";
 import GestionEmpresas from "../pages/GestionEmpresas";
 
-function Nav({ link, icon, text }) {
-    return (
-        <li className="page">
-            <NavLink to={link} className="botton">
-                <FontAwesomeIcon icon={icon} className="icon" />
-                <h2 className="textNav">{text}</h2>
-            </NavLink>
-        </li>
-    );
-}
-
 export function HeaderGeneralAdmin() {
+    const navigate = useNavigate();
 
     return (
         <header className="header-container">
@@ -29,5 +19,16 @@ export function HeaderGeneralAdmin() {
                 </ul>
             </nav>
         </header>
+    );
+}
+
+function Nav({ link, icon, text }) {
+    return (
+        <li className="page">
+            <NavLink to={link} className="botton">
+                <FontAwesomeIcon icon={icon} className="icon" />
+                <h2 className="textNav">{text}</h2>
+            </NavLink>
+        </li>
     );
 }
