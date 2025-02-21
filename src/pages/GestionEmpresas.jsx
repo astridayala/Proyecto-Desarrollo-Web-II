@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { HeaderGeneralAdmin } from "../components/HeaderGeneralAdmin";
 import { Footer } from "../components/Footer";
-import { db } from "../firebase/config"; // Asegúrate de importar correctamente Firebase
-import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
 
 function GestionEmpresas() {
   const [empresas, setEmpresas] = useState([]);
@@ -221,7 +219,6 @@ function GestionEmpresas() {
           )}
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
