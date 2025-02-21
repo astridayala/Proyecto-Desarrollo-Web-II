@@ -9,6 +9,7 @@ import { HeaderGeneralAdmin } from "./components/HeaderGeneralAdmin"
 import HomeCliente from "./pages/HomeCliente";
 import HomeAdminEmpresa from "./pages/HomeAdminEmpresa";
 import GestionOfertas from "./pages/GestionOfertas";
+import GestionEmpleados from "./pages/GestioEmpleados";
 
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
@@ -19,24 +20,12 @@ import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Routes>
-          <Route path="/login" element={<Login />}/>
-          <Route path="/footer" element={<Footer />}/>
-          <Route path="/profile" element={<Profile />}/>
-          <Route path="/register" element={<Register />}/>
-          <Route path="/homeCliente" element={<HomeCliente />}/>
-          <Route path="/headerGeneral" element={<HeaderGeneral />}/>
-          <Route path="/headerCliente" element={<HeaderCliente />}/>
-          <Route path="/headerEmpleado" element={<HeaderEmpleado/>}/>
-          <Route path="/homeAdminEmpresa" element={<HomeAdminEmpresa />}/>
-          <Route path="/headerGeneralAdmin" element={<HeaderGeneralAdmin />}/>
-          <Route path="/headerAdminOfertante" element={<HeaderAdminOfertante />}/>
-          <Route path="/gestion-ofertas" element={<GestionOfertas/>} />
-        </Routes>
-      </Router>
-    </AuthProvider>
+    <Router>
+      <Routes>
+      <Route path="/gestion-empleados" element={<GestionEmpleados />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
