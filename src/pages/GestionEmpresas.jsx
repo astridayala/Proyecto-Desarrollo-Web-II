@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { db } from "../firebase/config";
 import { HeaderGeneralAdmin } from "../components/HeaderGeneralAdmin";
-import { Footer } from "../components/Footer";
 
 function GestionEmpresas() {
   const [empresas, setEmpresas] = useState([]);
