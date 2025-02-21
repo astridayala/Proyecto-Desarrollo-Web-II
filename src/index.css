@@ -9,6 +9,8 @@
   --celeste-2: #3C7499;
   --celeste-3: #5AAEE6;
   --celeste-4: #94C1FF;
+  --celeste-5: #258cd2;
+  --celeste-6: #2f5875;
   --azul: #1d3557;
 
   --azul-1: #012E40;
@@ -185,14 +187,14 @@ footer h3{
   text-decoration: none;
 }
 .boton:hover {
-  background-color: var(--azul);
+  background-color: var(--celeste-6);
 }
 .botonIngresar{
   background-color: var(--celeste-3);
   margin-bottom: 10px;
 }
 .botonIngresar:hover{
-  background-color: var(--celeste-2);
+  background-color: var(--celeste-5);
 }
 .iconos{
   color: var(--blanco);
