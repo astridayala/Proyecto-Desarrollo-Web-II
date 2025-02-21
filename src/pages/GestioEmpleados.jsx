@@ -37,14 +37,14 @@ function GestionEmpleados() {
     <div className="min-h-screen bg-gray-100 flex flex-col">
       <HeaderAdminOfertante />
 
-      <main className="flex-grow container mx-auto p-5 pt-24 flex flex-col items-center">
-        <div className="w-full max-w-3xl bg-white p-8 rounded-lg shadow-lg mb-10">
+      <main className="flex-grow container mx-auto p-5 pt-24 flex flex-col items-center space-y-10">
+        
+        <div className="w-full max-w-3xl bg-white p-8 rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
             Registrar Empleado
           </h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              
               <div>
                 <label className="block text-gray-700 font-medium mb-2">
                   Nombres
@@ -59,7 +59,6 @@ function GestionEmpleados() {
                   required
                 />
               </div>
-              
               <div>
                 <label className="block text-gray-700 font-medium mb-2">
                   Apellidos
@@ -74,7 +73,6 @@ function GestionEmpleados() {
                   required
                 />
               </div>
-              
               <div className="flex flex-col md:col-span-2">
                 <label className="block text-gray-700 font-medium mb-2">
                   Correo Electrónico
@@ -93,7 +91,7 @@ function GestionEmpleados() {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="w-full sm:w-auto bg-blue-600 text-black font-semibold px-8 py-3 rounded hover:bg-blue-700 transition"
+                className="w-full sm:w-auto bg-[var(--celeste-4)] text-black font-semibold px-8 py-3 rounded hover:bg-[var(--celeste-5)] transition"
               >
                 Registrar Empleado
               </button>
@@ -130,16 +128,16 @@ function GestionEmpleados() {
                     <td className="px-4 py-3 text-sm text-gray-800">{emp.nombres}</td>
                     <td className="px-4 py-3 text-sm text-gray-800">{emp.apellidos}</td>
                     <td className="px-4 py-3 text-sm text-gray-800">{emp.email}</td>
-                    <td className="px-4 py-3 text-sm text-center">
+                    <td className="px-4 py-3 text-sm text-center space-x-2">
                       <button
                         onClick={() => handleUpdate(emp.id)}
-                        className="bg-green-600 text-black px-3 py-1 rounded hover:bg-green-700 transition mr-2"
+                        className="bg-[var(--celeste-4)] text-black px-3 py-1 rounded hover:bg-[var(--celeste-5)] transition"
                       >
                         Editar
                       </button>
                       <button
                         onClick={() => handleDelete(emp.id)}
-                        className="bg-red-600 text-black px-3 py-1 rounded hover:bg-red-700 transition"
+                        className="bg-[var(--celeste-4)] text-black px-3 py-1 rounded hover:bg-[var(--celeste-5)] transition"
                       >
                         Eliminar
                       </button>
