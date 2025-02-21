@@ -25,6 +25,7 @@ import Register from "./pages/Register";
 import { AuthProvider } from "./context/AuthContext";
 import Empleados from "./pages/Empleados";
 import { Cupon } from "./components/Cupon";
+import EmpleadoCanjeo from "./pages/EmpleadoCanjeo"
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path="/register" element={ <Register /> } />
 
           <Route path="/cupon" element={<Cupon />} />
+          <Route path="/Canjeo" element={<EmpleadoCanjeo/>}/>
 
         </Routes>
       </Router>
