@@ -11,6 +11,8 @@ import HomeAdmin from "./pages/HomeAdmin";
 import HomeCliente from "./pages/HomeCliente";
 import HomeAdminEmpresa from "./pages/HomeAdminEmpresa";
 
+import EstadoOfertas from "./pages/EstadoOfertas"
+
 import GestionOfertas from "./pages/GestionOfertas";
 import GestionEmpleados from "./pages/GestionEmpleados";
 import GestionEmpresas from "./pages/GestionEmpresas";
@@ -22,6 +24,7 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 
 import { AuthProvider } from "./context/AuthContext";
+import Empleados from "./pages/Empleados";
 
 function App() {
   return (
@@ -33,12 +36,15 @@ function App() {
           <Route path="/homeAdmin" element={<HomeAdmin />} /> 
           <Route path="/homeAdminEmpresa" element={<HomeAdminEmpresa/>} />
 
+          <Route path="/empleados" element={<Empleados/>} />
+          <Route path="/estado-ofertas" element={<EstadoOfertas/>} />
+
           <Route path="/gestion-empresas" element={< GestionEmpresas />} />
           <Route path="/gestion-rubros" element={<GestionRubros/>} />
           <Route path="/gestion-clientes" element={<GestionClientes/>} />
           <Route path="/gestion-empleados" element={<GestionEmpleados/>} />
-          <Route path="/gestion-ofertas" element={<GestionOfertas} />
-          
+          <Route path="/gestion-ofertas" element={<GestionOfertas/>} />
+
           <Route path="/login" element={ <Login/> }/>
           <Route path="/register" element={ <Register /> } />
 

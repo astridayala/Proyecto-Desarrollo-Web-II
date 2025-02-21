@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { HeaderAdminOfertante } from "../components/HeaderAdminOfertante";
+import { useNavigate } from "react-router-dom";
 
 function Empleados() {
   const [empleados, setEmpleados] = useState([]);
@@ -34,6 +36,7 @@ function Empleados() {
 
   return (
     <div className="container mx-auto p-8 pt-24 bg-gray-100 min-h-screen">
+      <HeaderAdminOfertante/>
       <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Gestión de Empleados</h1>
       <form 
         onSubmit={handleSubmit} 

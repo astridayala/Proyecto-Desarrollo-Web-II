@@ -23,8 +23,8 @@ export function HeaderAdminOfertante() {
             <nav className="pages">
                 <ul>
                     <Nav link="/gestion-ofertas" icon={faTags} text="Registrar Ofertas" />
-                    <Nav link="/estados-ofertas" icon={faClipboardList} text="Estados de las Ofertas" />
-                    <Nav link="/gestion-empleados" icon={faUsers} text="Empleados" />
+                    <Nav link="/estado-ofertas" icon={faClipboardList} text="Estados de las Ofertas" />
+                    <Nav link="/empleados" icon={faUsers} text="Empleados" />
                     <Nav link="/login" icon={faRightFromBracket} text="Cerrar sesión" />
                 </ul>
             </nav>
