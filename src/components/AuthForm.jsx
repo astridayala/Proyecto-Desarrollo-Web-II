@@ -1,5 +1,10 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faAt, faKey} from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
+import logo from "../assets/CM.png";
+import Register from "../pages/Register";
+import { useNavigate } from "react-router-dom";
 
 const AuthForm = () => {
   const { login, register } = useAuth();
@@ -16,32 +21,47 @@ const AuthForm = () => {
     }
   };
 
+  const navigate = useNavigate();
+
   return (
-    <div className="max-w-sm mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-xl font-bold mb-4">{isLogin ? "Iniciar sesión" : "Registrarse"}</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Correo electrónico"
-          className="w-full p-2 border rounded mb-3"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          className="w-full p-2 border rounded mb-3"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded">
-          {isLogin ? "Ingresar" : "Registrarse"}
-        </button>
-      </form>
-      <button className="mt-3 text-blue-500" onClick={() => setIsLogin(!isLogin)}>
-        {isLogin ? "¿No tienes cuenta? Regístrate" : "¿Ya tienes cuenta? Inicia sesión"}
-      </button>
+    <>
+    <div className="form-container">
+        <div className="formulario">
+            <div className="imgContainer">
+                <img src={logo} alt="" className="logo-CM"/>
+            </div>
+            <h2 className="head">Iniciar sesión</h2>
+            <form onSubmit={handleSubmit} className="loginForm">
+                <div className="inputContainer">
+                    <FontAwesomeIcon icon={faAt} className="iconos" />
+                    <input
+                        type="email"
+                        placeholder="Correo electrónico"
+                        className="w-full p-2 border rounded"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        />
+                </div>
+                <div className="inputContainer">
+                    <FontAwesomeIcon icon={faKey} className="iconos" />
+                    <input
+                        type="password"
+                        placeholder="Contraseña"
+                        className="w-full p-2 border rounded"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <button type="submit" className="botonIngresar">
+                    Ingresar
+                </button>
+            </form>
+            <button className="boton" onClick={() => navigate("/register")}>
+                ¿No tienes una cuenta? Regístrate
+            </button>
+        </div>
     </div>
+    </>
   );
 };
 
